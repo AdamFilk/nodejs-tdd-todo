@@ -1,0 +1,22 @@
+version: '1'
+
+services:
+  todo-app: 
+    build: 
+      dockerfile: 'Dockerfile'
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+  database: 
+    image: 'mysql'
+    ports:
+      - 3307:3306
+    environment: 
+      - MYSQL_ROOT_PASSWORD=hellofaux0308
+    volumes:
+      - todo-app-data:/var/lib/mysql/data
+
+volumes:
+  todo-app-data:
+  

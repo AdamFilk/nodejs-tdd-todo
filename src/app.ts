@@ -17,6 +17,8 @@ app.post('/todos',async (req,res) => {
     await todoController.create(req,res);
 })
 
-app.get('/todos',(req,res) => {})
+app.get('/todos',(req,res) => { })
+
+app.listen(3000, () => console.log('app running at 3000'));
 
 export default app;
